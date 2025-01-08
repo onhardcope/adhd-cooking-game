@@ -1,10 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxa74b71dy1fy"]
-
-[ext_resource type="Texture2D" uid="uid://bto7h2p7h38ia" path="res://White Filled Circle.png" id="1_p2unr"]
+[gd_scene format=3 uid="uid://bxa74b71dy1fy"]
 
 [node name="Kitchen" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("1_p2unr")
