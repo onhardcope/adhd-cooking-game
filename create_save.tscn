@@ -5,22 +5,23 @@
 [node name="Create Save" type="Node2D"]
 
 [node name="Create save label" type="Label" parent="."]
-offset_left = 538.0
+offset_left = 524.0
 offset_top = 171.0
-offset_right = 688.0
+offset_right = 691.0
 offset_bottom = 202.0
 theme_override_fonts/font = SubResource("SystemFont_sbyhk")
-text = "CREATE NEW SAVE"
+text = "CREATE NEW PROFILE"
 
 [node name="Age" type="Label" parent="."]
 offset_left = 385.0
 offset_top = 292.0
-offset_right = 441.0
+offset_right = 430.0
 offset_bottom = 327.0
 theme_override_fonts/font = SubResource("SystemFont_sbyhk")
 text = "Age"
 
 [node name="Age Input" type="LineEdit" parent="Age"]
+layout_mode = 0
 offset_left = 60.0
 offset_top = -2.0
 offset_right = 407.0
@@ -35,14 +36,22 @@ theme_override_fonts/font = SubResource("SystemFont_sbyhk")
 text = "Name"
 
 [node name="Name Input" type="LineEdit" parent="Name"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = -2.0
 offset_right = 411.0
 offset_bottom = 31.0
 
-[node name="Button" type="Button" parent="."]
-offset_left = 561.0
-offset_top = 357.0
-offset_right = 658.0
-offset_bottom = 388.0
-text = "START"
+[node name="Tutorial" type="Button" parent="."]
+offset_left = 461.0
+offset_top = 350.0
+offset_right = 605.0
+offset_bottom = 385.0
+text = "PLAY TUTORIAL"
+
+[node name="Level-1" type="Button" parent="."]
+offset_left = 628.0
+offset_top = 352.0
+offset_right = 749.0
+offset_bottom = 386.0
+text = "PLAY LEVEL-1"
