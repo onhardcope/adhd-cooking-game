@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://bxa74b71dy1fy"]
-
-[node name="Kitchen" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
