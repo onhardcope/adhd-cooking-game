@@ -1,0 +1,275 @@
+[gd_scene load_steps=35 format=3 uid="uid://b4atebuo1fem1"]
+
+[ext_resource type="Script" path="res://Kitchen/kitchen.gd" id="1_e7fpt"]
+[ext_resource type="Texture2D" uid="uid://c022qm0j3x5m7" path="res://Assets/background.png" id="1_wao47"]
+[ext_resource type="Texture2D" uid="uid://c5oiwhjgcdak7" path="res://Assets/fridge_0.png" id="2_4ikyh"]
+[ext_resource type="Texture2D" uid="uid://djtdxdhbtebha" path="res://Assets/exhaust.png" id="2_vk336"]
+[ext_resource type="Texture2D" uid="uid://bdl5rpyam46dg" path="res://Assets/Cupboard/top_left_0.png" id="3_jwn7m"]
+[ext_resource type="Texture2D" uid="uid://uy6nmvs17mi" path="res://Assets/countertop.png" id="3_ypo7v"]
+[ext_resource type="Texture2D" uid="uid://dgdw735q1o3n4" path="res://Assets/stove_top_0.png" id="4_1a3wk"]
+[ext_resource type="Texture2D" uid="uid://dm24vdff0slkp" path="res://Assets/Cupboard/top_middle_0.png" id="4_t2m7h"]
+[ext_resource type="Texture2D" uid="uid://2ca8kj0torew" path="res://Assets/Cupboard/top_right_0.png" id="5_m1nto"]
+[ext_resource type="Texture2D" uid="uid://bue7154roirl6" path="res://Assets/Cupboard/bottom_left_0.png" id="6_c201u"]
+[ext_resource type="Texture2D" uid="uid://bwfncpej2ui0w" path="res://Assets/Cupboard/bottom_right_0.png" id="7_a0idp"]
+[ext_resource type="Texture2D" uid="uid://5tvdr4b07ct0" path="res://Assets/Cupboard/bottom_middle_bg.png" id="8_6fn2b"]
+[ext_resource type="Texture2D" uid="uid://do7cgwu4q8kc2" path="res://Assets/Cupboard/bottom_middle_3_0.png" id="9_a3ue4"]
+[ext_resource type="Texture2D" uid="uid://da7k8y2imxtt4" path="res://Assets/Cupboard/bottom_middle_3_1.png" id="10_b4xw6"]
+[ext_resource type="Texture2D" uid="uid://kjqd1hnw51es" path="res://Assets/Cupboard/bottom_middle_2_0.png" id="11_w47oo"]
+[ext_resource type="Texture2D" uid="uid://cgkjucqpa67r7" path="res://Assets/Cupboard/bottom_middle_2_1.png" id="12_ueeg4"]
+[ext_resource type="Texture2D" uid="uid://oe8yaduks0x1" path="res://Assets/Cupboard/bottom_middle_1_0.png" id="13_k6uhc"]
+[ext_resource type="Texture2D" uid="uid://dh06rjs3nkwvs" path="res://Assets/Cupboard/bottom_middle_1_1.png" id="14_yhxht"]
+[ext_resource type="Texture2D" uid="uid://2sr11f4wwfsy" path="res://Assets/oven_0.png" id="18_otvpp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u2pr6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4ikyh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r04w6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jwn7m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iq3ie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_t2m7h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdaal"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_m1nto")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2mwat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_c201u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3n5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_a0idp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tlsot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_a3ue4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_b4xw6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3i3yh"]
+size = Vector2(308.25, 122.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_83er4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_w47oo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ueeg4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpcxi"]
+size = Vector2(307.5, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kslt5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_k6uhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yhxht")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_2gmch"]
+script/source = "extends AnimatedSprite2D
+
+var current_frame = 0
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+
+
+func _process(delta: float) -> void:
+	pass
+
+
+
+'''func _input(event: InputEvent) -> void:
+	if (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
+		if get_rect
+			current_frame = (current_frame + 1) % 2
+			self.set_frame_and_progress(current_frame, current_frame)'''
+		
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a87x7"]
+size = Vector2(308.5, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s14l3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1a3wk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cncco"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_otvpp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Kitchen" type="Node2D"]
+script = ExtResource("1_e7fpt")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_wao47")
+centered = false
+
+[node name="Fridge" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u2pr6")
+centered = false
+
+[node name="Cupboards" type="Node2D" parent="."]
+
+[node name="TopLeft" type="AnimatedSprite2D" parent="Cupboards"]
+sprite_frames = SubResource("SpriteFrames_r04w6")
+centered = false
+
+[node name="TopMiddle" type="AnimatedSprite2D" parent="Cupboards"]
+sprite_frames = SubResource("SpriteFrames_iq3ie")
+centered = false
+
+[node name="TopRight" type="AnimatedSprite2D" parent="Cupboards"]
+sprite_frames = SubResource("SpriteFrames_fdaal")
+centered = false
+
+[node name="BottomLeft" type="AnimatedSprite2D" parent="Cupboards"]
+sprite_frames = SubResource("SpriteFrames_2mwat")
+centered = false
+
+[node name="BottomRight" type="AnimatedSprite2D" parent="Cupboards"]
+sprite_frames = SubResource("SpriteFrames_r3n5o")
+centered = false
+
+[node name="BottomMiddleBG" type="Sprite2D" parent="Cupboards"]
+texture = ExtResource("8_6fn2b")
+centered = false
+
+[node name="BottomMiddle3" type="AnimatedSprite2D" parent="Cupboards"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_tlsot")
+centered = false
+
+[node name="BottomMiddle3Area" type="Area2D" parent="Cupboards/BottomMiddle3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboards/BottomMiddle3/BottomMiddle3Area"]
+position = Vector2(962.125, 903.75)
+shape = SubResource("RectangleShape2D_3i3yh")
+
+[node name="BottomMiddle2" type="AnimatedSprite2D" parent="Cupboards"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_83er4")
+centered = false
+
+[node name="BottomMiddle2Area" type="Area2D" parent="Cupboards/BottomMiddle2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboards/BottomMiddle2/BottomMiddle2Area"]
+position = Vector2(962.5, 776.5)
+shape = SubResource("RectangleShape2D_wpcxi")
+
+[node name="BottomMiddle1" type="AnimatedSprite2D" parent="Cupboards"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_kslt5")
+centered = false
+script = SubResource("GDScript_2gmch")
+
+[node name="BottomMiddle1Area" type="Area2D" parent="Cupboards/BottomMiddle1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboards/BottomMiddle1/BottomMiddle1Area"]
+position = Vector2(961.75, 651)
+shape = SubResource("RectangleShape2D_a87x7")
+
+[node name="ExhaustSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_vk336")
+centered = false
+
+[node name="Countertop" type="Sprite2D" parent="."]
+texture = ExtResource("3_ypo7v")
+centered = false
+
+[node name="StoveTop" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s14l3")
+centered = false
+
+[node name="Oven" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cncco")
+centered = false
+
+[connection signal="input_event" from="Cupboards/BottomMiddle3/BottomMiddle3Area" to="." method="_on_bottom_middle_3_area_input_event"]
+[connection signal="input_event" from="Cupboards/BottomMiddle2/BottomMiddle2Area" to="." method="_on_bottom_middle_2_area_input_event"]
+[connection signal="input_event" from="Cupboards/BottomMiddle1/BottomMiddle1Area" to="." method="_on_bottom_middle_1_area_input_event"]
