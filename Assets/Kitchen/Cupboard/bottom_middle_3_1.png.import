@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uy6nmvs17mi"
-path="res://.godot/imported/countertop.png-463d4e234a6c7aea5e887c72e481ebf5.ctex"
+uid="uid://djdgnsew1hytl"
+path="res://.godot/imported/bottom_middle_3_1.png-eebd821ab127997d9d2a1dd1136a087d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/countertop.png"
-dest_files=["res://.godot/imported/countertop.png-463d4e234a6c7aea5e887c72e481ebf5.ctex"]
+source_file="res://Assets/Kitchen/Cupboard/bottom_middle_3_1.png"
+dest_files=["res://.godot/imported/bottom_middle_3_1.png-eebd821ab127997d9d2a1dd1136a087d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2ca8kj0torew"
-path="res://.godot/imported/top_right_0.png-5ebd72a6564171a5ec56b45c0858aee6.ctex"
+uid="uid://5mnc0v6prruv"
+path="res://.godot/imported/fridge_1.png-a648b6e8db33109d0de1dc6200351562.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cupboard/top_right_0.png"
-dest_files=["res://.godot/imported/top_right_0.png-5ebd72a6564171a5ec56b45c0858aee6.ctex"]
+source_file="res://Assets/Kitchen/fridge_1.png"
+dest_files=["res://.godot/imported/fridge_1.png-a648b6e8db33109d0de1dc6200351562.ctex"]
 
 [params]
 

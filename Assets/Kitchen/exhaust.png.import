@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oe8yaduks0x1"
-path="res://.godot/imported/bottom_middle_1_0.png-568f7698d7c65c87f39e40cb8ea0a5f5.ctex"
+uid="uid://c66h4rw2ja3dp"
+path="res://.godot/imported/exhaust.png-08d73dbc752d3bc25cdc801833bbac02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cupboard/bottom_middle_1_0.png"
-dest_files=["res://.godot/imported/bottom_middle_1_0.png-568f7698d7c65c87f39e40cb8ea0a5f5.ctex"]
+source_file="res://Assets/Kitchen/exhaust.png"
+dest_files=["res://.godot/imported/exhaust.png-08d73dbc752d3bc25cdc801833bbac02.ctex"]
 
 [params]
 
