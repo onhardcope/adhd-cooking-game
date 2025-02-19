@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b4atebuo1fem1"]
+[gd_scene load_steps=46 format=3 uid="uid://b4atebuo1fem1"]
 
 [ext_resource type="Script" path="res://Kitchen/kitchen.gd" id="1_e7fpt"]
 [ext_resource type="Texture2D" uid="uid://j7v2ynk5d2ho" path="res://Assets/Kitchen/background.png" id="1_wao47"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ordeyspt83a" path="res://Assets/Kitchen/Cupboard/top_middle_0.png" id="4_t2m7h"]
 [ext_resource type="Texture2D" uid="uid://dtrarhrd4aiva" path="res://Assets/Kitchen/Cupboard/top_right_0.png" id="5_m1nto"]
 [ext_resource type="Texture2D" uid="uid://dh738hguxan1x" path="res://Assets/Kitchen/Cupboard/bottom_left_0.png" id="6_c201u"]
+[ext_resource type="PackedScene" uid="uid://c6hhsppq0jrhb" path="res://ingredient_list_template.tscn" id="6_ingtu"]
 [ext_resource type="Texture2D" uid="uid://cnhasyfgvs8s3" path="res://Assets/Kitchen/Cupboard/top_left_1.png" id="6_ua441"]
 [ext_resource type="Texture2D" uid="uid://d03qqq64m4ljp" path="res://Assets/Kitchen/Cupboard/bottom_right_0.png" id="7_a0idp"]
 [ext_resource type="Texture2D" uid="uid://dm56ee4uodfv4" path="res://Assets/Kitchen/Cupboard/bottom_middle_bg.png" id="8_6fn2b"]
@@ -74,7 +75,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd3t0"]
-size = Vector2(298, 253)
+size = Vector2(289, 253)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iq3ie"]
 animations = [{
@@ -86,6 +87,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g20ty"]
+size = Vector2(287, 252)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2mwat"]
 animations = [{
@@ -216,6 +220,14 @@ centered = false
 position = Vector2(1620, 565.5)
 shape = SubResource("RectangleShape2D_0v1a0")
 
+[node name="FridgeList" parent="Fridge" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 887.0
+offset_top = 310.0
+offset_right = 1383.0
+offset_bottom = 564.0
+tooltip_text = "Contains items preserved in the cold"
+
 [node name="Cupboards" type="Node2D" parent="."]
 
 [node name="TopLeft" type="AnimatedSprite2D" parent="Cupboards"]
@@ -229,6 +241,13 @@ centered = false
 position = Vector2(271, 168.75)
 shape = SubResource("RectangleShape2D_gylo5")
 
+[node name="TopLeftList" parent="Cupboards/TopLeft" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 27.0
+offset_top = 310.0
+offset_right = 523.0
+offset_bottom = 564.0
+
 [node name="TopRight" type="AnimatedSprite2D" parent="Cupboards"]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_fdaal")
@@ -237,12 +256,33 @@ centered = false
 [node name="TopRightArea" type="Area2D" parent="Cupboards/TopRight"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboards/TopRight/TopRightArea"]
-position = Vector2(1264, 168.5)
+position = Vector2(1268.5, 168.5)
 shape = SubResource("RectangleShape2D_hd3t0")
 
+[node name="TopRightList" parent="Cupboards/TopRight" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 916.0
+offset_top = 310.0
+offset_right = 1412.0
+offset_bottom = 564.0
+
 [node name="TopMiddle" type="AnimatedSprite2D" parent="Cupboards"]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_iq3ie")
 centered = false
+
+[node name="TopMiddleArea" type="Area2D" parent="Cupboards/TopMiddle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboards/TopMiddle/TopMiddleArea"]
+position = Vector2(964.5, 169)
+shape = SubResource("RectangleShape2D_g20ty")
+
+[node name="TopMiddleList" parent="Cupboards/TopMiddle" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 714.0
+offset_top = 310.0
+offset_right = 1210.0
+offset_bottom = 564.0
 
 [node name="BottomLeft" type="AnimatedSprite2D" parent="Cupboards"]
 unique_name_in_owner = true
@@ -255,6 +295,13 @@ centered = false
 position = Vector2(280, 777.5)
 shape = SubResource("RectangleShape2D_4tebm")
 
+[node name="BottomLeftList" parent="Cupboards/BottomLeft" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 27.0
+offset_top = 310.0
+offset_right = 523.0
+offset_bottom = 564.0
+
 [node name="BottomRight" type="AnimatedSprite2D" parent="Cupboards"]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_r3n5o")
@@ -265,6 +312,13 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboards/BottomRight/BottomRightArea"]
 position = Vector2(1271.5, 779.5)
 shape = SubResource("RectangleShape2D_pr1bb")
+
+[node name="BottomRightList" parent="Cupboards/BottomRight" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 916.0
+offset_top = 310.0
+offset_right = 1412.0
+offset_bottom = 564.0
 
 [node name="BottomMiddleBG" type="Sprite2D" parent="Cupboards"]
 texture = ExtResource("8_6fn2b")
@@ -281,6 +335,13 @@ centered = false
 position = Vector2(962.125, 903.75)
 shape = SubResource("RectangleShape2D_3i3yh")
 
+[node name="BottomMiddle3List" parent="Cupboards/BottomMiddle3" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 714.0
+offset_top = 310.0
+offset_right = 1210.0
+offset_bottom = 564.0
+
 [node name="BottomMiddle2" type="AnimatedSprite2D" parent="Cupboards"]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_83er4")
@@ -291,6 +352,13 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboards/BottomMiddle2/BottomMiddle2Area"]
 position = Vector2(962.5, 776.5)
 shape = SubResource("RectangleShape2D_wpcxi")
+
+[node name="BottomMiddle2List" parent="Cupboards/BottomMiddle2" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 714.0
+offset_top = 310.0
+offset_right = 1210.0
+offset_bottom = 564.0
 
 [node name="BottomMiddle1" type="AnimatedSprite2D" parent="Cupboards"]
 unique_name_in_owner = true
@@ -304,6 +372,13 @@ centered = false
 position = Vector2(961.75, 651)
 shape = SubResource("RectangleShape2D_a87x7")
 
+[node name="BottomMiddle1List" parent="Cupboards/BottomMiddle1" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 714.0
+offset_top = 310.0
+offset_right = 1210.0
+offset_bottom = 564.0
+
 [node name="Countertop" type="Sprite2D" parent="."]
 texture = ExtResource("3_ypo7v")
 centered = false
@@ -316,11 +391,12 @@ centered = false
 sprite_frames = SubResource("SpriteFrames_cncco")
 centered = false
 
-[connection signal="input_event" from="Fridge/FridgeArea" to="." method="_on_fridge_area_input_event"]
-[connection signal="input_event" from="Cupboards/TopLeft/TopLeftArea" to="." method="_on_top_left_area_input_event"]
-[connection signal="input_event" from="Cupboards/TopRight/TopRightArea" to="." method="_on_top_right_area_input_event"]
-[connection signal="input_event" from="Cupboards/BottomLeft/BottomLeftArea" to="." method="_on_bottom_left_area_input_event"]
-[connection signal="input_event" from="Cupboards/BottomRight/BottomRightArea" to="." method="_on_bottom_right_area_input_event"]
-[connection signal="input_event" from="Cupboards/BottomMiddle3/BottomMiddle3Area" to="." method="_on_bottom_middle_3_area_input_event"]
-[connection signal="input_event" from="Cupboards/BottomMiddle2/BottomMiddle2Area" to="." method="_on_bottom_middle_2_area_input_event"]
-[connection signal="input_event" from="Cupboards/BottomMiddle1/BottomMiddle1Area" to="." method="_on_bottom_middle_1_area_input_event"]
+[connection signal="input_event" from="Fridge/FridgeArea" to="." method="_on_animated_component_area_input_event" binds= [0]]
+[connection signal="input_event" from="Cupboards/TopLeft/TopLeftArea" to="." method="_on_animated_component_area_input_event" binds= [1]]
+[connection signal="input_event" from="Cupboards/TopRight/TopRightArea" to="." method="_on_animated_component_area_input_event" binds= [2]]
+[connection signal="input_event" from="Cupboards/TopMiddle/TopMiddleArea" to="." method="_on_animated_component_area_input_event" binds= [3]]
+[connection signal="input_event" from="Cupboards/BottomLeft/BottomLeftArea" to="." method="_on_animated_component_area_input_event" binds= [4]]
+[connection signal="input_event" from="Cupboards/BottomRight/BottomRightArea" to="." method="_on_animated_component_area_input_event" binds= [5]]
+[connection signal="input_event" from="Cupboards/BottomMiddle3/BottomMiddle3Area" to="." method="_on_animated_component_area_input_event" binds= [6]]
+[connection signal="input_event" from="Cupboards/BottomMiddle2/BottomMiddle2Area" to="." method="_on_animated_component_area_input_event" binds= [7]]
+[connection signal="input_event" from="Cupboards/BottomMiddle1/BottomMiddle1Area" to="." method="_on_animated_component_area_input_event" binds= [8]]
