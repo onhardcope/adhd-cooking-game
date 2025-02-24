@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b4atebuo1fem1"]
+[gd_scene load_steps=55 format=3 uid="uid://b4atebuo1fem1"]
 
 [ext_resource type="Script" path="res://Kitchen/kitchen.gd" id="1_e7fpt"]
 [ext_resource type="Texture2D" uid="uid://j7v2ynk5d2ho" path="res://Assets/Kitchen/background.png" id="1_wao47"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ordeyspt83a" path="res://Assets/Kitchen/Cupboard/top_middle_0.png" id="4_t2m7h"]
 [ext_resource type="Texture2D" uid="uid://dtrarhrd4aiva" path="res://Assets/Kitchen/Cupboard/top_right_0.png" id="5_m1nto"]
 [ext_resource type="Texture2D" uid="uid://dh738hguxan1x" path="res://Assets/Kitchen/Cupboard/bottom_left_0.png" id="6_c201u"]
+[ext_resource type="PackedScene" uid="uid://c6hhsppq0jrhb" path="res://ingredient_list_template.tscn" id="6_ingtu"]
 [ext_resource type="Texture2D" uid="uid://cnhasyfgvs8s3" path="res://Assets/Kitchen/Cupboard/top_left_1.png" id="6_ua441"]
 [ext_resource type="Texture2D" uid="uid://d03qqq64m4ljp" path="res://Assets/Kitchen/Cupboard/bottom_right_0.png" id="7_a0idp"]
 [ext_resource type="Texture2D" uid="uid://dm56ee4uodfv4" path="res://Assets/Kitchen/Cupboard/bottom_middle_bg.png" id="8_6fn2b"]
@@ -24,6 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://btdminulx32ad" path="res://Assets/Kitchen/Cupboard/bottom_middle_1_0.png" id="13_k6uhc"]
 [ext_resource type="Texture2D" uid="uid://dd2evowsfci0b" path="res://Assets/Kitchen/Cupboard/bottom_middle_1_1.png" id="14_yhxht"]
 [ext_resource type="Texture2D" uid="uid://p5h34agev3lv" path="res://Assets/Kitchen/oven_0.png" id="18_otvpp"]
+[ext_resource type="Texture2D" uid="uid://c18swsygcwxey" path="res://Assets/Kitchen/Ingredients/show_selection.png" id="27_pgrcc"]
+[ext_resource type="Script" path="res://Kitchen/recipes.gd" id="27_qkey3"]
+[ext_resource type="Texture2D" uid="uid://2j3kbj8wotl6" path="res://Assets/Kitchen/Recipe book/l.jpg" id="28_moxqj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u2pr6"]
 animations = [{
@@ -74,7 +78,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd3t0"]
-size = Vector2(298, 253)
+size = Vector2(289, 253)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iq3ie"]
 animations = [{
@@ -86,6 +90,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g20ty"]
+size = Vector2(287, 252)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2mwat"]
 animations = [{
@@ -194,6 +201,56 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0f7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_pgrcc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2gtl"]
+size = Vector2(116, 116)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdpb0"]
+content_margin_left = 25.0
+content_margin_top = 18.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0.0862745, 0.0862745, 0.0862745, 0.87451)
+border_width_left = 15
+border_width_top = 8
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.515097, 0.136039, 4.81308e-08, 1)
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2t3g"]
+bg_color = Color(0.160784, 0.160784, 0.160784, 0.980392)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 7
+border_color = Color(0.513726, 0.137255, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_5s0ey"]
+font_size = 45
+font_color = Color(0.76662, 0.76662, 0.76662, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lh0re"]
+bg_color = Color(0.780484, 0.349098, 0.203893, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 10
+
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_e7fpt")
 
@@ -216,6 +273,14 @@ centered = false
 position = Vector2(1620, 565.5)
 shape = SubResource("RectangleShape2D_0v1a0")
 
+[node name="FridgeList" parent="Fridge" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 887.0
+offset_top = 310.0
+offset_right = 1383.0
+offset_bottom = 564.0
+tooltip_text = "Contains items preserved in the cold"
+
 [node name="Cupboards" type="Node2D" parent="."]
 
 [node name="TopLeft" type="AnimatedSprite2D" parent="Cupboards"]
@@ -229,20 +294,50 @@ centered = false
 position = Vector2(271, 168.75)
 shape = SubResource("RectangleShape2D_gylo5")
 
+[node name="TopLeftList" parent="Cupboards/TopLeft" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 27.0
+offset_top = 310.0
+offset_right = 523.0
+offset_bottom = 564.0
+
 [node name="TopRight" type="AnimatedSprite2D" parent="Cupboards"]
 unique_name_in_owner = true
+position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_fdaal")
+frame_progress = 0.345125
 centered = false
 
 [node name="TopRightArea" type="Area2D" parent="Cupboards/TopRight"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboards/TopRight/TopRightArea"]
-position = Vector2(1264, 168.5)
+position = Vector2(1268.5, 168.5)
 shape = SubResource("RectangleShape2D_hd3t0")
 
+[node name="TopRightList" parent="Cupboards/TopRight" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 916.0
+offset_top = 310.0
+offset_right = 1412.0
+offset_bottom = 564.0
+
 [node name="TopMiddle" type="AnimatedSprite2D" parent="Cupboards"]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_iq3ie")
 centered = false
+
+[node name="TopMiddleArea" type="Area2D" parent="Cupboards/TopMiddle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboards/TopMiddle/TopMiddleArea"]
+position = Vector2(964.5, 169)
+shape = SubResource("RectangleShape2D_g20ty")
+
+[node name="TopMiddleList" parent="Cupboards/TopMiddle" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 714.0
+offset_top = 310.0
+offset_right = 1210.0
+offset_bottom = 564.0
 
 [node name="BottomLeft" type="AnimatedSprite2D" parent="Cupboards"]
 unique_name_in_owner = true
@@ -255,6 +350,13 @@ centered = false
 position = Vector2(280, 777.5)
 shape = SubResource("RectangleShape2D_4tebm")
 
+[node name="BottomLeftList" parent="Cupboards/BottomLeft" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 27.0
+offset_top = 310.0
+offset_right = 523.0
+offset_bottom = 564.0
+
 [node name="BottomRight" type="AnimatedSprite2D" parent="Cupboards"]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_r3n5o")
@@ -265,6 +367,13 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboards/BottomRight/BottomRightArea"]
 position = Vector2(1271.5, 779.5)
 shape = SubResource("RectangleShape2D_pr1bb")
+
+[node name="BottomRightList" parent="Cupboards/BottomRight" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 916.0
+offset_top = 310.0
+offset_right = 1412.0
+offset_bottom = 564.0
 
 [node name="BottomMiddleBG" type="Sprite2D" parent="Cupboards"]
 texture = ExtResource("8_6fn2b")
@@ -281,6 +390,13 @@ centered = false
 position = Vector2(962.125, 903.75)
 shape = SubResource("RectangleShape2D_3i3yh")
 
+[node name="BottomMiddle3List" parent="Cupboards/BottomMiddle3" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 714.0
+offset_top = 310.0
+offset_right = 1210.0
+offset_bottom = 564.0
+
 [node name="BottomMiddle2" type="AnimatedSprite2D" parent="Cupboards"]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_83er4")
@@ -291,6 +407,13 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cupboards/BottomMiddle2/BottomMiddle2Area"]
 position = Vector2(962.5, 776.5)
 shape = SubResource("RectangleShape2D_wpcxi")
+
+[node name="BottomMiddle2List" parent="Cupboards/BottomMiddle2" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 714.0
+offset_top = 310.0
+offset_right = 1210.0
+offset_bottom = 564.0
 
 [node name="BottomMiddle1" type="AnimatedSprite2D" parent="Cupboards"]
 unique_name_in_owner = true
@@ -304,6 +427,13 @@ centered = false
 position = Vector2(961.75, 651)
 shape = SubResource("RectangleShape2D_a87x7")
 
+[node name="BottomMiddle1List" parent="Cupboards/BottomMiddle1" instance=ExtResource("6_ingtu")]
+visible = false
+offset_left = 714.0
+offset_top = 310.0
+offset_right = 1210.0
+offset_bottom = 564.0
+
 [node name="Countertop" type="Sprite2D" parent="."]
 texture = ExtResource("3_ypo7v")
 centered = false
@@ -313,14 +443,82 @@ sprite_frames = SubResource("SpriteFrames_s14l3")
 centered = false
 
 [node name="Oven" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 1)
 sprite_frames = SubResource("SpriteFrames_cncco")
 centered = false
 
-[connection signal="input_event" from="Fridge/FridgeArea" to="." method="_on_fridge_area_input_event"]
-[connection signal="input_event" from="Cupboards/TopLeft/TopLeftArea" to="." method="_on_top_left_area_input_event"]
-[connection signal="input_event" from="Cupboards/TopRight/TopRightArea" to="." method="_on_top_right_area_input_event"]
-[connection signal="input_event" from="Cupboards/BottomLeft/BottomLeftArea" to="." method="_on_bottom_left_area_input_event"]
-[connection signal="input_event" from="Cupboards/BottomRight/BottomRightArea" to="." method="_on_bottom_right_area_input_event"]
-[connection signal="input_event" from="Cupboards/BottomMiddle3/BottomMiddle3Area" to="." method="_on_bottom_middle_3_area_input_event"]
-[connection signal="input_event" from="Cupboards/BottomMiddle2/BottomMiddle2Area" to="." method="_on_bottom_middle_2_area_input_event"]
-[connection signal="input_event" from="Cupboards/BottomMiddle1/BottomMiddle1Area" to="." method="_on_bottom_middle_1_area_input_event"]
+[node name="ShowSelectionSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1586, 82)
+sprite_frames = SubResource("SpriteFrames_u0f7i")
+
+[node name="ShowSelectionArea" type="Area2D" parent="ShowSelectionSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShowSelectionSprite/ShowSelectionArea"]
+shape = SubResource("RectangleShape2D_e2gtl")
+
+[node name="SelectionList" type="ItemList" parent="."]
+unique_name_in_owner = true
+visible = false
+clip_contents = false
+offset_top = 680.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_colors/guide_color = Color(0.328503, 0.0746415, 2.40654e-08, 1)
+theme_override_constants/v_separation = 14
+theme_override_font_sizes/font_size = 46
+theme_override_styles/panel = SubResource("StyleBoxFlat_fdpb0")
+auto_height = true
+max_columns = 5
+fixed_column_width = 368
+icon_scale = 0.7
+
+[node name="Header" type="Label" parent="SelectionList"]
+layout_mode = 1
+anchors_preset = -1
+offset_top = -76.0
+offset_right = 1920.0
+offset_bottom = 9.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_t2t3g")
+text = "S E L E C T E D  I T E M S"
+label_settings = SubResource("LabelSettings_5s0ey")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="recipes" type="Button" parent="."]
+offset_left = 1727.0
+offset_top = 17.0
+offset_right = 1903.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_lh0re")
+text = "RECIPE"
+script = ExtResource("27_qkey3")
+
+[node name="RecipeBookSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(996, 525)
+texture = ExtResource("28_moxqj")
+
+[connection signal="input_event" from="Fridge/FridgeArea" to="." method="_on_component_input_event" binds= [0]]
+[connection signal="item_selected" from="Fridge/FridgeList" to="." method="_on_component_list_item_selected"]
+[connection signal="input_event" from="Cupboards/TopLeft/TopLeftArea" to="." method="_on_component_input_event" binds= [1]]
+[connection signal="item_selected" from="Cupboards/TopLeft/TopLeftList" to="." method="_on_component_list_item_selected"]
+[connection signal="input_event" from="Cupboards/TopRight/TopRightArea" to="." method="_on_component_input_event" binds= [2]]
+[connection signal="item_selected" from="Cupboards/TopRight/TopRightList" to="." method="_on_component_list_item_selected"]
+[connection signal="input_event" from="Cupboards/TopMiddle/TopMiddleArea" to="." method="_on_component_input_event" binds= [3]]
+[connection signal="item_selected" from="Cupboards/TopMiddle/TopMiddleList" to="." method="_on_component_list_item_selected"]
+[connection signal="input_event" from="Cupboards/BottomLeft/BottomLeftArea" to="." method="_on_component_input_event" binds= [4]]
+[connection signal="item_selected" from="Cupboards/BottomLeft/BottomLeftList" to="." method="_on_component_list_item_selected"]
+[connection signal="input_event" from="Cupboards/BottomRight/BottomRightArea" to="." method="_on_component_input_event" binds= [5]]
+[connection signal="item_selected" from="Cupboards/BottomRight/BottomRightList" to="." method="_on_component_list_item_selected"]
+[connection signal="input_event" from="Cupboards/BottomMiddle3/BottomMiddle3Area" to="." method="_on_component_input_event" binds= [6]]
+[connection signal="item_selected" from="Cupboards/BottomMiddle3/BottomMiddle3List" to="." method="_on_component_list_item_selected"]
+[connection signal="input_event" from="Cupboards/BottomMiddle2/BottomMiddle2Area" to="." method="_on_component_input_event" binds= [7]]
+[connection signal="item_selected" from="Cupboards/BottomMiddle2/BottomMiddle2List" to="." method="_on_component_list_item_selected"]
+[connection signal="input_event" from="Cupboards/BottomMiddle1/BottomMiddle1Area" to="." method="_on_component_input_event" binds= [8]]
+[connection signal="item_selected" from="Cupboards/BottomMiddle1/BottomMiddle1List" to="." method="_on_component_list_item_selected"]
+[connection signal="input_event" from="ShowSelectionSprite/ShowSelectionArea" to="." method="_on_show_selection_input_event"]
+[connection signal="item_clicked" from="SelectionList" to="." method="_on_selection_list_item_clicked"]
+[connection signal="pressed" from="recipes" to="." method="_on_recipes_pressed"]
